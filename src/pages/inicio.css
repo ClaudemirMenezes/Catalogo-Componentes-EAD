@@ -1,0 +1,238 @@
+.inicio-page {
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: clamp(20px, 4vw, 48px);
+    border: 1px solid #e6e8ef;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 12px 36px rgba(35, 31, 52, 0.06);
+    color: #243247;
+}
+
+.inicio-hero {
+    position: relative;
+    display: flex;
+    min-height: 270px;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding: clamp(28px, 5vw, 54px);
+    border-radius: 16px;
+    background: linear-gradient(115deg, #f5f0fc 0%, #f8f7fb 58%, #eee7f8 100%);
+}
+
+.inicio-hero-copy {
+    position: relative;
+    z-index: 1;
+    max-width: 670px;
+}
+
+.inicio-eyebrow {
+    display: inline-block;
+    color: var(--base-color);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+}
+
+.inicio-hero h1 {
+    max-width: 620px;
+    margin: 12px 0;
+    color: #202b3c;
+    font-size: clamp(1.8rem, 3.5vw, 2.65rem);
+    line-height: 1.12;
+}
+
+.inicio-hero-copy > p {
+    max-width: 600px;
+    margin: 0;
+    color: #566579;
+    font-size: 1rem;
+    line-height: 1.65;
+}
+
+.inicio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 22px;
+}
+
+.inicio-tags span {
+    padding: 6px 10px;
+    border: 1px solid #e1d8ef;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.75);
+    color: #514469;
+    font-size: 0.76rem;
+    font-weight: 600;
+}
+
+.inicio-hero-art {
+    display: flex;
+    flex: 0 0 210px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px 0 24px;
+}
+
+.inicio-hero-art img {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.inicio-explorar {
+    padding: clamp(30px, 5vw, 50px) 0 34px;
+}
+
+.inicio-section-heading {
+    margin-bottom: 20px;
+}
+
+.inicio-section-heading h2 {
+    margin: 7px 0 5px;
+    color: #243247;
+    font-size: 1.45rem;
+}
+
+.inicio-section-heading p {
+    margin: 0;
+    color: #718096;
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+.inicio-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.inicio-card {
+    min-height: 164px;
+    padding: 20px;
+    border: 1px solid #e7e9ef;
+    border-radius: 12px;
+    background: #fff;
+    transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.inicio-card:hover {
+    transform: translateY(-2px);
+    border-color: #d6c7e9;
+    box-shadow: 0 8px 20px rgba(35, 31, 52, 0.06);
+}
+
+.inicio-card-number {
+    color: var(--base-color);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+
+.inicio-card h3 {
+    margin: 10px 0 7px;
+    color: #29364a;
+    font-size: 1rem;
+}
+
+.inicio-card p {
+    margin: 0;
+    color: #68778b;
+    font-size: 0.86rem;
+    line-height: 1.55;
+}
+
+.inicio-contribuir {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 18px 20px;
+    border: 1px solid #e7e1f0;
+    border-radius: 12px;
+    background: #faf8fd;
+}
+
+.inicio-contribuir h2 {
+    margin: 0 0 4px;
+    color: #29364a;
+    font-size: 0.98rem;
+}
+
+.inicio-contribuir p {
+    margin: 0;
+    color: #68778b;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.inicio-contribuir-selo {
+    flex: 0 0 auto;
+    padding: 7px 11px;
+    border-radius: 999px;
+    background: #efe8f8;
+    color: var(--base-color);
+    font-size: 0.74rem;
+    font-weight: 700;
+}
+
+@media (max-width: 760px) {
+    .inicio-hero-art {
+        flex-basis: 150px;
+        margin-right: 0;
+    }
+
+    .inicio-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .inicio-card {
+        min-height: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .inicio-page {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .inicio-hero {
+        min-height: 0;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 26px 22px;
+    }
+
+    .inicio-hero-art {
+        flex: 0 0 auto;
+        width: 128px;
+        margin: 16px 0 0 auto;
+    }
+
+    .inicio-tags {
+        gap: 6px;
+        margin-top: 17px;
+    }
+
+    .inicio-tags span {
+        font-size: 0.7rem;
+    }
+
+    .inicio-contribuir {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .inicio-card {
+        transition: none;
+    }
+}

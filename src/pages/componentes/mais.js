@@ -68,7 +68,7 @@ export default {
             accordion: `<Accordion><Bellow><template #title>Primeiro item</template><template #content><p>Conteúdo do item.</p></template></Bellow></Accordion>`,
             destaque: `<Destaque tipo="importante"><p>Este é um aviso importante.</p></Destaque>`,
             botao: `<Button>Continuar</Button>`,
-            image: `<Image src="./src/assets/images/tela_inicial.png">Clique na imagem para ampliar.</Image>`,
+            image: `<Image src="./src/assets/images/e">Clique na imagem para ampliar.</Image>`,
             conteudo: `<Conteudo two_columns><template #column1>Coluna 1</template><template #column2>Coluna 2</template></Conteudo>`,
             separador: `<Separador :items="2" />`,
             lista: `<Lista><ItemLista>Primeiro item</ItemLista><ItemLista>Segundo item</ItemLista></Lista>`,
@@ -79,15 +79,16 @@ export default {
             cardInfo: `<GrupoCardInfo><CardInfo titulo="Atendimentos" destaque="120">Atendimentos realizados no período.</CardInfo></GrupoCardInfo>`,
             painelAbas: `<PainelAbas><template #abas><Aba id="aba-1" control="conteudo-1" active>Primeira aba</Aba><Aba id="aba-2" control="conteudo-2">Segunda aba</Aba></template><template #conteudo-abas><ConteudoAba id="conteudo-1">Conteúdo 1</ConteudoAba><ConteudoAba id="conteudo-2">Conteúdo 2</ConteudoAba></template></PainelAbas>`,
             progressBar: `<ProgressBar />`,
-            imagemLegenda: `<ImagemLegenda imagem="./src/assets/images/tela_inicial.png" legenda="Introdução às tecnologias de controle vetorial." fonte="Arquivo do projeto" alt="Ilustração de um mosquito e título sobre controle vetorial" />`,
+            imagemLegenda: `<ImagemLegenda imagem="./src/assets/images/eadpe.png" legenda="Plataforma de educação a distância Fiocruz-PE." fonte="Arquivo do projeto" alt="Ilustração de um mosquito e título sobre controle vetorial" />`,
             flipCard: `<FlipCards><FlipCard><template #frente><h3>Frente do card</h3></template><template #verso><p>Conteúdo revelado ao virar.</p></template></FlipCard></FlipCards>`,
             grupoBotoes: `<GrupoBotoes><Button tipo="modulo">Primeira opção</Button><Button tipo="modulo">Segunda opção</Button><Button tipo="modulo">Terceira opção</Button></GrupoBotoes>`,
             testeUmaOpcao: `<One-Option-Test id="catalogo-opcao-unica" :options="opcoesUnica">Qual medida ajuda a prevenir doenças?</One-Option-Test>`,
             testeMultiplasOpcoes: `<Multi-Options-Test id="catalogo-multiplas-opcoes" :options="opcoesMultiplas">Selecione as medidas de prevenção.</Multi-Options-Test>`,
             testeDropdown: `<Dropdown-Option-Test id="catalogo-associacao" :options="opcoesDropdown">Complete a frase escolhendo a opção adequada.</Dropdown-Option-Test>`,
             testeAberto: `<Open-Test id="catalogo-resposta-aberta" :max="180">Explique uma medida de prevenção.</Open-Test>`,
-            video: `<Player-Video src="./videos/video_360p.mp4" thumbnail="./src/assets/images/tela_inicial.png" :resolutions="['360p']" default="360p" />`,
-            chat: `<Chat character="teacher" image="./src/assets/images/personas/avatar-professora.png" message="Olá! Este é um exemplo de mensagem." />`,
+            video: `<Player-Video src="./src/assets/video/logo-ead-fiocruz-pe.mp4" thumbnail="./src/assets/eadpe.png" :resolutions="['360p']" default="360p" />`,
+            chat: `<Chat character="teacher" image="./src/assets/images/personas/avatar-professor.png" message="Olá! Vamos revisar o conteúdo da aula?" />
+<Chat character="student" image="./src/assets/images/personas/avatar-estudante1.png" message="Olá, professor! Sim, ainda tenho uma dúvida sobre o tema." />`,
             fluxoProcesso: `<FluxoProcesso :etapas="[{ titulo: 'Planejar', texto: 'Defina o objetivo.' }, { titulo: 'Executar', texto: 'Realize a atividade.' }]" />`,
             fluxoEtapas: `<FluxoEtapas :intervalo="4000" :etapas="[{ titulo: 'Etapa 1', texto: 'Primeira etapa.' }, { titulo: 'Etapa 2', texto: 'Segunda etapa.' }]" />`,
             carousel: `<CaixaImgSlider :autoPlay="false" :items="[{ title: 'Primeiro slide', text: 'Descrição do primeiro slide.' }, { title: 'Segundo slide', text: 'Descrição do segundo slide.' }]" />`,
@@ -207,7 +208,7 @@ export default {
                     <ExemploComponente v-if="visivel('destaque')" titulo="Destaque" :codigo="exemplos.destaque"><Destaque tipo="importante"><p>Este é um aviso importante.</p></Destaque></ExemploComponente>
                     <ExemploComponente v-if="visivel('avatar')" titulo="Avatar de conversa" :codigo="exemplos.avatar"><Avatar src="./src/assets/images/personas/avatar-professora.png" right color="roxo_claro">Olá! Este é um exemplo de conversa.</Avatar></ExemploComponente>
                     <ExemploComponente v-if="visivel('botao')" titulo="Botão" :codigo="exemplos.botao"><Button>Continuar</Button></ExemploComponente>
-                    <ExemploComponente v-if="visivel('image')" titulo="Imagem com zoom" :codigo="exemplos.image"><Image src="./src/assets/images/tela_inicial.png">Clique na imagem para ampliar.</Image></ExemploComponente>
+                    <ExemploComponente v-if="visivel('image')" titulo="Imagem com zoom" :codigo="exemplos.image"><Image src="./src/assets/images/eadpe.png">Clique na imagem para ampliar.</Image></ExemploComponente>
                     <ExemploComponente v-if="visivel('conteudo')" titulo="Conteúdo em duas colunas" :codigo="exemplos.conteudo"><Conteudo two_columns><template #column1>Coluna 1</template><template #column2>Coluna 2</template></Conteudo></ExemploComponente>
                     <ExemploComponente v-if="visivel('separador')" titulo="Separador" :codigo="exemplos.separador"><Separador :items="2" /></ExemploComponente>
                     <ExemploComponente v-if="visivel('lista')" titulo="Lista" :codigo="exemplos.lista"><Lista><ItemLista>Primeiro item</ItemLista><ItemLista>Segundo item</ItemLista></Lista></ExemploComponente>
@@ -218,15 +219,18 @@ export default {
                     <ExemploComponente v-if="visivel('cardInfo')" titulo="Card de informação" :codigo="exemplos.cardInfo"><GrupoCardInfo><CardInfo titulo="Atendimentos" destaque="120">Atendimentos realizados no período.</CardInfo></GrupoCardInfo></ExemploComponente>
                     <ExemploComponente v-if="visivel('painelAbas')" titulo="Painel de abas" :codigo="exemplos.painelAbas"><PainelAbas><template #abas><Aba id="catalogo-aba-1" control="catalogo-conteudo-1" active>Primeira aba</Aba><Aba id="catalogo-aba-2" control="catalogo-conteudo-2">Segunda aba</Aba></template><template #conteudo-abas><ConteudoAba id="catalogo-conteudo-1">Conteúdo 1</ConteudoAba><ConteudoAba id="catalogo-conteudo-2">Conteúdo 2</ConteudoAba></template></PainelAbas></ExemploComponente>
                     <ExemploComponente v-if="visivel('progressBar')" titulo="Barra de progresso" :codigo="exemplos.progressBar"><ProgressBar /></ExemploComponente>
-                    <ExemploComponente v-if="visivel('imagemLegenda')" titulo="Imagem, legenda e fonte" :codigo="exemplos.imagemLegenda"><ImagemLegenda imagem="./src/assets/images/tela_inicial.png" legenda="Introdução às tecnologias de controle vetorial." fonte="Arquivo do projeto" alt="Ilustração de um mosquito e título sobre controle vetorial" /></ExemploComponente>
+                    <ExemploComponente v-if="visivel('imagemLegenda')" titulo="Imagem, legenda e fonte" :codigo="exemplos.imagemLegenda"><ImagemLegenda imagem="./src/assets/images/eadpe.png" legenda="Plataforma de educação a distância Fiocruz-PE." fonte="Arquivo do projeto" alt="Ilustração de um mosquito e título sobre controle vetorial" /></ExemploComponente>
                     <ExemploComponente v-if="visivel('flipCard')" titulo="Card que vira" :codigo="exemplos.flipCard"><FlipCards><FlipCard><template #frente><h3>Frente do card</h3></template><template #verso><p>Conteúdo revelado ao virar.</p></template></FlipCard></FlipCards></ExemploComponente>
                     <ExemploComponente v-if="visivel('grupoBotoes')" titulo="Grupo de botões" :codigo="exemplos.grupoBotoes"><GrupoBotoes><Button tipo="modulo">Primeira opção</Button><Button tipo="modulo">Segunda opção</Button><Button tipo="modulo">Terceira opção</Button></GrupoBotoes></ExemploComponente>
-                    <ExemploComponente v-if="visivel('chat')" titulo="Mensagem de chat" :codigo="exemplos.chat"><Chat character="teacher" image="./src/assets/images/personas/avatar-professora.png" message="Olá! Este é um exemplo de mensagem." /></ExemploComponente>
+                    <ExemploComponente v-if="visivel('chat')" titulo="Mensagem de chat" :codigo="exemplos.chat">
+                        <Chat character="teacher" image="./src/assets/images/personas/avatar-professor.png" message="Olá! Vamos revisar o conteúdo da aula?" />
+                        <Chat character="student" image="./src/assets/images/personas/avatar-estudante1.png" message="Olá, professor! Sim, ainda tenho uma dúvida sobre o tema." />
+                    </ExemploComponente>
                     <ExemploComponente v-if="visivel('fluxoProcesso')" titulo="Fluxo de processo clicável" :codigo="exemplos.fluxoProcesso"><FluxoProcesso :etapas="[{ titulo: 'Planejar', texto: 'Defina o objetivo.' }, { titulo: 'Executar', texto: 'Realize a atividade.' }]" /></ExemploComponente>
                     <ExemploComponente v-if="visivel('fluxoEtapas')" titulo="Fluxo de etapas automático" :codigo="exemplos.fluxoEtapas"><FluxoEtapas :intervalo="4000" :etapas="[{ titulo: 'Etapa 1', texto: 'Primeira etapa.' }, { titulo: 'Etapa 2', texto: 'Segunda etapa.' }]" /></ExemploComponente>
                     <div v-if="visivel('carousel')" class="catalogo-demo-largo"><ExemploComponente titulo="Carrossel" :codigo="exemplos.carousel"><CaixaImgSlider :autoPlay="false" :items="[{ title: 'Primeiro slide', text: 'Descrição do primeiro slide.' }, { title: 'Segundo slide', text: 'Descrição do segundo slide.' }]" /></ExemploComponente></div>
                     <ExemploComponente v-if="visivel('quadroClicavel')" titulo="Quadro com abas" :codigo="exemplos.quadroClicavel"><QuadroClicavel :tabData="[{ name: 'Atenção básica', content: 'Ações de promoção e prevenção.' }, { name: 'Vigilância', content: 'Acompanhamento de riscos e agravos.' }]" /></ExemploComponente>
-                    <ExemploComponente v-if="visivel('hotspot')" titulo="Imagem com pontos interativos" :codigo="exemplos.hotspot"><HotspotImage backgroundImage="./src/assets/images/tela_inicial.png" :nodes="[{ id: 1, x: 50, y: 50, label: '+', title: 'Ponto interativo', description: 'Informação apresentada ao selecionar o marcador.' }]" /></ExemploComponente>
+                    <ExemploComponente v-if="visivel('hotspot')" titulo="Imagem com pontos interativos" :codigo="exemplos.hotspot"><HotspotImage backgroundImage="./src/assets/images/eadpe.png" :nodes="[{ id: 1, x: 50, y: 50, label: '+', title: 'Ponto interativo', description: 'Informação apresentada ao selecionar o marcador.' }]" /></ExemploComponente>
                     <ExemploComponente v-if="visivel('dropdown')" titulo="Menu suspenso" :codigo="exemplos.dropdown"><Dropdown><template #front><span>Ver opções</span></template><template #content><li>Opção 1</li><li>Opção 2</li></template></Dropdown></ExemploComponente>
                     <ExemploComponente v-if="visivel('navigation')" titulo="Navegação para outra página" :codigo="exemplos.navigation"><Navigation go="inicio(Inicio)">Voltar ao início</Navigation></ExemploComponente>
                     <ExemploComponente v-if="visivel('modal')" titulo="Modal" :codigo="exemplos.modal"><button type="button" @click="modalAberto = true">Abrir modal</button><Modal :open="modalAberto" @close="modalAberto = false"><template #title>Exemplo de modal</template><template #content><p>Conteúdo da janela.</p></template></Modal></ExemploComponente>
@@ -236,7 +240,16 @@ export default {
                     <div v-if="visivel('testeMultiplasOpcoes')" class="catalogo-demo-largo"><ExemploComponente titulo="Teste de múltiplas alternativas" :codigo="exemplos.testeMultiplasOpcoes"><Multi-Options-Test id="catalogo-multiplas-opcoes" :options="opcoesMultiplas">Selecione as medidas de prevenção.</Multi-Options-Test></ExemploComponente></div>
                     <div v-if="visivel('testeDropdown')" class="catalogo-demo-largo"><ExemploComponente titulo="Teste de associação" :codigo="exemplos.testeDropdown"><Dropdown-Option-Test id="catalogo-associacao" :options="opcoesDropdown">Complete a frase escolhendo a opção adequada.</Dropdown-Option-Test></ExemploComponente></div>
                     <div v-if="visivel('testeAberto')" class="catalogo-demo-largo"><ExemploComponente titulo="Campo de resposta aberta" :codigo="exemplos.testeAberto"><Open-Test id="catalogo-resposta-aberta" :max="180">Explique uma medida de prevenção.</Open-Test></ExemploComponente></div>
-                    <div v-if="visivel('video')" class="catalogo-demo-largo"><ExemploComponente titulo="Player de vídeo" :codigo="exemplos.video"><p>Este componente precisa de um arquivo de vídeo do projeto. No exemplo copiável, troque o caminho de <code>src</code> pelo arquivo que deseja usar.</p></ExemploComponente></div>
+                    <div v-if="visivel('video')" class="catalogo-demo-largo">
+                        <ExemploComponente titulo="Player de vídeo" :codigo="exemplos.video">
+                            <Player-Video
+                                src="./src/assets/video/logo-ead-fiocruz-pe.mp4"
+                                thumbnail="./src/assets/eadpe.png"
+                                :resolutions="['360p']"
+                                default="360p"
+                            />
+                        </ExemploComponente>
+                    </div>
                     <div v-if="visivel('tabelaVertical')" class="catalogo-demo-largo"><ExemploComponente titulo="Tabela vertical" :codigo="exemplos.tabelaVertical"><TabelaVertical :rows="[['Acolhimento', 'Escuta inicial'], ['Avaliação', 'Identificação das necessidades']]"><template #headers><th>Etapa</th><th>Descrição</th></template></TabelaVertical></ExemploComponente></div>
                     <div v-if="visivel('tabelaHorizontal')" class="catalogo-demo-largo"><ExemploComponente titulo="Tabela horizontal" :codigo="exemplos.tabelaHorizontal"><TabelaHorizontal :tableHeaders="['Indicador', '2024', '2025']" :tableRows="[['Atendimentos', '80', '120'], ['Unidades', '4', '6']]" /></ExemploComponente></div>
                     <div v-if="visivel('tabelaMultiplas')" class="catalogo-demo-largo"><ExemploComponente titulo="Tabela de múltiplos períodos" :codigo="exemplos.tabelaMultiplas"><TabelaMultiplas :tableHeaders="['Local', '2024', '2025']" :tableRows="[['Unidade A', '12', '18'], ['Unidade B', '9', '15']]" /></ExemploComponente></div>
