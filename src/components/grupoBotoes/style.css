@@ -1,0 +1,79 @@
+/* =========================
+   GRUPO DE BOTÕES
+========================= */
+
+.grupo-botoes {
+    width: 100%;
+
+    margin: 20px auto 0;
+
+    display: grid;
+
+    /* 3 botões largos */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    /* ESPAÇO ENTRE OS BOTÕES */
+    gap: 30px;
+
+    align-items: stretch;
+
+    box-sizing: border-box;
+}
+
+
+/* Cada Navigation ocupa sua coluna */
+
+.grupo-botoes > * {
+    width: 100%;
+    min-width: 0;
+
+    display: block;
+}
+
+
+/* Caso Navigation gere <a> */
+
+.grupo-botoes a {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    text-decoration: none;
+}
+
+
+/* Faz o botão preencher o Navigation */
+
+.grupo-botoes .unasus-button-modulo {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .grupo-botoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 25px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 480px) {
+
+    .grupo-botoes {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+}

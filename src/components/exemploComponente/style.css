@@ -1,0 +1,54 @@
+.exemplo-componente {
+    margin: 24px 0;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.exemplo-componente-titulo {
+    padding: 10px 16px;
+    background: var(--base-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+.exemplo-componente-demo {
+    padding: 24px 16px;
+    background: #fff;
+}
+
+.exemplo-componente-codigo {
+    position: relative;
+    background: #1e1e2e;
+}
+
+.exemplo-componente-codigo pre {
+    margin: 0;
+    padding: 16px;
+    overflow-x: auto;
+}
+
+.exemplo-componente-codigo code,
+.exemplo-componente-codigo pre * {
+    color: #e0e0e0;
+    font-family: Consolas, 'Courier New', monospace;
+    font-size: 14px;
+    white-space: pre;
+}
+
+.exemplo-componente-copiar {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 4px 10px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background: #2e2e3e;
+    color: #e0e0e0;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.exemplo-componente-copiar:hover {
+    background: #3e3e50;
+}

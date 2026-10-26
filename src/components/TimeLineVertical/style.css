@@ -1,0 +1,89 @@
+:root {
+  --table-header-bg: #DC6413;
+  --table-header-text: #fff;
+  --table-row-odd-bg: #F8E0D0;
+  --table-row-even-bg: #F8E0D0;
+  --table-border-color: #dddddd;
+  --font-family-base: 'Livvic', sans-serif;
+}
+
+/* Tabela */
+.table-box-Vertical { 
+  width: 100%;
+  overflow-x: auto; /* permite scroll horizontal em telas pequenas */
+  padding: 1rem;
+  display: block; /* block para respeitar overflow-x */
+}
+
+.table-box-Vertical table {
+  width: 100%;
+  min-width: 600px; /* evita que quebre com 3 colunas */
+  border-collapse: collapse;
+  font-family: var(--font-family-base);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  border: 1px solid #fff;
+}
+
+/* Cabeçalho */
+.tabela-header th {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-text);
+  padding: 12px;
+  text-align: left;
+  font-weight: normal;
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: 2px solid #dddddd;
+  border: 1px solid #ccc;
+  text-align: justify;
+}
+
+/* Células */
+.table-box-Vertical td {
+  padding: 15px;
+  text-align: left;
+  font-size: 16px;
+  border-bottom: 1px solid var(--table-border-color);
+  color: #000;
+  border: 1px solid #ccc;
+  text-align: justify;
+}
+
+/* Zebra striping */
+.table-box-Vertical tbody tr:nth-child(odd) {
+  background-color: var(--table-row-odd-bg);
+}
+
+.table-box-Vertical tbody tr:nth-child(even) {
+  background-color: var(--table-row-even-bg);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .table-box-Vertical table {
+    min-width: 100%; /* reduz a largura mínima para tablets */
+  }
+}
+
+@media (max-width: 768px) {
+  .table-box-Vertical table {
+    min-width: unset; /* libera a largura mínima em telas pequenas */
+  }
+  .table-box-Vertical td{
+    font-size: 14px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-bottom: 2px solid #dddddd;
+  }
+  .tabela-header th {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-bottom: 2px solid #dddddd;
+  }
+  .table-box-Vertical {
+    padding: 0.5rem;
+  }
+}

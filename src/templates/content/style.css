@@ -1,0 +1,173 @@
+#unasus-page-container {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 66px);
+}
+
+#unasus-content-wrapper {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+#unasus-page-wrapper { 
+    display: table;
+    padding: 30px 50px 30px 50px; 
+    width: 100%;
+}
+
+#unasus-page-footer { min-height: 17%; }
+ 
+#unasus-title-text { float: left; } 
+
+#unasus-pagination { float: right; }
+
+#unasus-title-area {
+    position: relative;
+    display: table;
+    width: 100%;
+    background: #ffffff;
+    padding: 1em 2em;
+}
+
+#unasus-title-area #unasus-title-text span:nth-child(1) { padding-right: 3px; }
+
+#unasus-title-area #unasus-title-text span:nth-child(3) { padding-left: 3px; }
+
+#unasus-title-text h2 { font-size: 1.4rem; }
+
+#unasus-title-area #unasus-pagination,
+#unasus-title-area { 
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+#unasus-title-area #unasus-pagination .button {
+    position: relative;
+    display: inline-block;
+    padding: 18px;
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+#unasus-title-area #unasus-pagination .button:hover { background: #f2f2f2; }
+
+#unasus-title-area #unasus-pagination .next::after,
+#unasus-title-area #unasus-pagination .previous::after {
+    content: '';
+    position: absolute;
+    top: 14px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+}
+
+#unasus-title-area #unasus-pagination .next::after {
+    border-left: 5px solid #333333;
+    border-right: 5px solid transparent;
+    left: 14px;
+}
+
+#unasus-title-area #unasus-pagination .previous::after {
+    border-left: 5px solid transparent;
+    border-right: 5px solid #333333;
+    right: 14px;
+}
+
+#unasus-title-area #unasus-pagination span:nth-child(2),
+#unasus-title-area #unasus-pagination span:nth-child(3),
+#unasus-title-area #unasus-pagination span:nth-child(4) { padding-right: 3px; }
+
+#unasus-title-area #unasus-pagination .previous + span { padding-right: 5px; }
+
+#unasus-title-area #unasus-pagination .previous { 
+    margin-right: 10px; 
+    vertical-align: middle;
+}
+
+#unasus-title-area #unasus-pagination .next { 
+    margin-left: 10px; 
+    vertical-align: middle;
+}
+
+/* buttons */
+
+#unasus-page-container .fixed-button:nth-child(1):hover,
+#unasus-page-container .fixed-button:nth-child(2):hover { background: #f2f2f2; }
+
+#unasus-page-container .fixed-button:nth-child(1),
+#unasus-page-container .fixed-button:nth-child(2) {
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    transform: translateY(-50%);
+    width: 56px;
+    height: 84px;
+    cursor: pointer;
+    background: #ffffff;
+    border: 1px solid rgb(179, 179, 179);
+}
+
+#unasus-page-container .fixed-button:nth-child(1) { 
+    right: 0;
+    border-right: none;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+#unasus-page-container .fixed-button:nth-child(2) { 
+    border-left: none; 
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+#unasus-page-container .fixed-button:nth-child(1)::after,
+#unasus-page-container .fixed-button:nth-child(2)::after {
+    content: '';
+    position: absolute;
+    top: 37px;
+    display: inline-block;  
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent; 
+}
+
+
+#unasus-page-container .fixed-button:nth-child(1)::after {
+    left: 20px;
+    border-left: 10px solid #333333;
+    border-right: 5px solid transparent;
+}
+
+#unasus-page-container .fixed-button:nth-child(2)::after {
+    right: 20px;
+    border-left: 5px solid transparent;
+    border-right: 10px solid #333333;
+}
+
+.hide_button_navigation { visibility: hidden; }
+
+.unasus-page-wrapper-margin { 
+    margin: 0 auto;
+    max-width: 1500px; 
+}
+
+/* responsividade */
+
+@media only screen and (max-width: 501px) {
+    #unasus-title-text { 
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #unasus-title-area {
+        padding: 1em 1.6em;
+    }
+
+    #unasus-pagination { float: left; }
+}

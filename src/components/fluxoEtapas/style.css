@@ -1,0 +1,607 @@
+/* =========================================
+   CONTAINER GERAL
+========================================= */
+
+.fluxo-etapas-wrapper {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 40px auto;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   FLUXO - DESKTOP / TABLET
+========================================= */
+
+.fluxo-etapas {
+    width: 100%;
+    max-width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.fluxo-etapa {
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
+
+    min-height: 300px;
+
+    padding: 18px;
+
+    flex: 0 0 210px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    border: 2px solid #662483;
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   IMAGEM DO CARD
+========================================= */
+
+.fluxo-imagem {
+    width: 170px;
+    max-width: 100%;
+
+    height: 200px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+.fluxo-imagem img {
+    width: 100%;
+    max-width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================
+   TÍTULO
+========================================= */
+
+.fluxo-etapa h3 {
+    width: 100%;
+
+    margin: 8px 0;
+
+    font-size: 1.35rem;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    color: #4B277F;
+
+    box-sizing: border-box;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================
+   TEXTO
+========================================= */
+
+.fluxo-etapa p {
+    width: 100%;
+
+    margin: 0;
+
+    font-size: 0.9rem;
+
+    line-height: 1.5;
+
+    color: #000;
+
+    box-sizing: border-box;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================
+   CONECTOR ENTRE OS CARDS
+========================================= */
+
+.fluxo-conector {
+    width: 60px;
+    min-width: 60px;
+    max-width: 60px;
+
+    height: 60px;
+    min-height: 60px;
+
+    flex: 0 0 60px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   SETA →
+   DESKTOP / TABLET
+========================================= */
+
+.fluxo-img-direita {
+    display: block !important;
+
+    width: 40px !important;
+    height: auto !important;
+
+    max-width: 40px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    position: static !important;
+
+    object-fit: contain !important;
+
+    transform: none !important;
+
+    rotate: none !important;
+}
+
+
+/* =========================================
+   SETA ↓
+   ESCONDIDA NO DESKTOP
+========================================= */
+
+.fluxo-img-baixo {
+    display: none !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    transform: none !important;
+
+    rotate: none !important;
+}
+
+
+/* =========================================
+   ANIMAÇÃO DA SETA
+========================================= */
+
+.seta-enter-active {
+    transition: opacity 0.5s ease;
+}
+
+
+.seta-enter-from {
+    opacity: 0;
+}
+
+
+.seta-enter-to {
+    opacity: 1;
+}
+
+
+/* =========================================
+   ANIMAÇÃO DO CARD
+========================================= */
+
+.etapa-enter-active {
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+
+.etapa-enter-from {
+    opacity: 0;
+
+    transform:
+        translateX(-30px)
+        scale(0.96);
+}
+
+
+.etapa-enter-to {
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   CELULAR / ABAIXO DO TABLET
+   ATÉ 768PX
+========================================================= */
+
+@media (max-width: 768px) {
+
+
+    /* =========================================
+       CONTAINER GERAL
+    ========================================= */
+
+    .fluxo-etapas-wrapper {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 25px auto;
+
+        padding: 0 10px;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =========================================
+       FLUXO VERTICAL
+    ========================================= */
+
+    .fluxo-etapas {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+
+        flex-direction: column !important;
+
+        flex-wrap: nowrap;
+
+        align-items: center !important;
+
+        justify-content: flex-start !important;
+
+        gap: 0;
+
+        margin: 0;
+
+        padding: 0;
+
+        box-sizing: border-box;
+
+        overflow-x: hidden;
+    }
+
+
+    /* =========================================
+       CARD
+    ========================================= */
+
+    .fluxo-etapa {
+        width: 100%;
+
+        max-width: 320px;
+
+        min-width: 0;
+
+        min-height: 240px;
+
+        padding: 14px;
+
+        flex: 0 0 auto;
+
+        margin: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* =========================================
+       IMAGEM DO CARD
+    ========================================= */
+
+    .fluxo-imagem {
+        width: 150px;
+
+        max-width: 100%;
+
+        height: 170px;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        box-sizing: border-box;
+    }
+
+
+    .fluxo-imagem img {
+        width: 100%;
+
+        max-width: 100%;
+
+        height: 100%;
+
+        display: block;
+
+        object-fit: contain;
+    }
+
+
+    /* =========================================
+       TÍTULO
+    ========================================= */
+
+    .fluxo-etapa h3 {
+        width: 100%;
+
+        max-width: 100%;
+
+        font-size: 1.15rem;
+
+        overflow-wrap: break-word;
+
+        word-break: normal;
+    }
+
+
+    /* =========================================
+       TEXTO
+    ========================================= */
+
+    .fluxo-etapa p {
+        width: 100%;
+
+        max-width: 100%;
+
+        font-size: 0.85rem;
+
+        line-height: 1.4;
+
+        overflow-wrap: break-word;
+
+        word-break: normal;
+    }
+
+
+    /* =========================================
+       CONECTOR ENTRE OS CARDS
+    ========================================= */
+
+    .fluxo-conector {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        height: 55px !important;
+
+        min-height: 55px !important;
+
+        flex: 0 0 55px !important;
+
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        align-items: center !important;
+
+        justify-content: center !important;
+
+        margin: 0 !important;
+
+        padding: 0 !important;
+
+        position: relative !important;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+
+    /* =========================================
+       ESCONDE COMPLETAMENTE A SETA →
+    ========================================= */
+
+    .fluxo-img-direita {
+        display: none !important;
+
+        visibility: hidden !important;
+
+        opacity: 0 !important;
+
+        width: 0 !important;
+
+        height: 0 !important;
+
+        min-width: 0 !important;
+
+        max-width: 0 !important;
+
+        min-height: 0 !important;
+
+        max-height: 0 !important;
+
+        position: absolute !important;
+
+        pointer-events: none !important;
+    }
+
+
+    /* =========================================
+       MOSTRA A SETA ↓
+    ========================================= */
+
+    .fluxo-img-baixo {
+        display: block !important;
+
+        visibility: visible !important;
+
+        opacity: 1 !important;
+
+        width: 40px !important;
+
+        height: 40px !important;
+
+        min-width: 40px !important;
+
+        min-height: 40px !important;
+
+        max-width: 40px !important;
+
+        max-height: 40px !important;
+
+        flex: 0 0 40px !important;
+
+        margin: 0 auto !important;
+
+        padding: 0 !important;
+
+        border: 0 !important;
+
+        position: static !important;
+
+        object-fit: contain !important;
+
+        transform: none !important;
+
+        rotate: none !important;
+    }
+
+
+    /* =========================================
+       ANIMAÇÃO DO CARD NO MOBILE
+    ========================================= */
+
+    .etapa-enter-from {
+        opacity: 0;
+
+        transform:
+            translateY(-25px)
+            scale(0.97);
+    }
+
+
+    .etapa-enter-to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* =========================================================
+   CELULARES MUITO PEQUENOS
+   ATÉ 400PX
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .fluxo-etapas-wrapper {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    .fluxo-etapa {
+        width: 100%;
+
+        max-width: 100%;
+
+        min-width: 0;
+
+        padding: 12px;
+    }
+
+
+    .fluxo-imagem {
+        width: 140px;
+
+        max-width: 100%;
+
+        height: 160px;
+    }
+
+
+    .fluxo-conector {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+    }
+
+
+    .fluxo-img-baixo {
+        width: 35px !important;
+
+        height: 35px !important;
+
+        min-width: 35px !important;
+
+        min-height: 35px !important;
+
+        max-width: 35px !important;
+
+        max-height: 35px !important;
+    }
+}

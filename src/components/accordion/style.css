@@ -1,0 +1,58 @@
+.unasus-accordion .unasus-bellow:last-child .content { border-bottom: none; }
+
+.unasus-accordion .unasus-bellow:first-child .front { padding-top: 0; }
+
+.unasus-bellow .front {
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    line-height: 28px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.unasus-bellow .content {
+    max-height: 0;
+    overflow: hidden;
+    border-bottom: 1px solid #dfdfdf;
+    transition: max-height 0.5s;
+    padding-left: 15px;
+}
+
+.unasus-bellow .content div { 
+    padding-bottom: 1rem; 
+    word-break: break-all;
+}
+
+.unasus-bellow .btn-bellow {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    border-radius: 2px;
+    width: 28px;
+    height: 28px;
+    background: var(--base-color);
+}
+
+.unasus-bellow .front:hover .btn-bellow { background: var(--auxiliary-color) }
+
+.unasus-bellow .btn-bellow .bar {
+    position: absolute;
+    top: 13px;
+    left: 8px;
+    display: inline-block;
+    width: 12px;
+    height: 2px;
+    background: #ffffff;
+}
+
+.unasus-bellow .btn-bellow .bar:nth-child(1) { 
+    transition: opacity 0.5s;
+    transform: rotate(90deg);
+    opacity: 1; 
+}
+
+.unasus_bellow_hide_bar { opacity: 0 !important; }

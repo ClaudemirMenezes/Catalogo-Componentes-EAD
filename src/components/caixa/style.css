@@ -1,0 +1,158 @@
+/* Caixa principal */
+div.caixa {
+    border-radius: 20px;
+    border-style: solid;
+    
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    border-width: 1px;
+
+    padding: 20px 30px;
+    margin: 20px 0;
+
+    text-align: justify;
+    text-justify: auto;
+    display: block;
+
+    /* Quebra automática de links e textos longos */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
+
+    /* Responsividade */
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* =========================
+   CORES DAS CAIXAS
+========================= */
+
+div.caixa-green {
+    border-color: rgb(24, 150, 155);
+    background-color: rgba(24, 150, 155, 0.2);
+}
+
+div.caixa-blue {
+    border-color: rgb(0, 24, 160);
+    background-color: rgba(137, 155, 255, 0.2);
+}
+
+div.caixa-yellow {
+    border-color: rgb(186, 199, 0);
+    background-color: rgba(226, 240, 36, 0.2);
+}
+
+div.caixa-roxo {
+    border-color: #4B277F;
+    background-color: #DBD4E5;
+}
+
+div.caixa-laranja {
+    border-color: #DC6413;
+    background-color: #F8E0D0;
+}
+
+/* =========================
+   TÍTULO
+========================= */
+
+.titulo-caixa {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #4B277F !important;
+}
+
+/* =========================
+   ITENS
+========================= */
+
+div.caixa > div.item-caixa {
+    display: flex;
+    align-items: flex-start;
+
+    padding-left: 15px;
+    padding-right: 15px;
+
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.item-caixa i {
+    margin-top: 4px;
+    margin-right: 8px; 
+    flex-shrink: 0;
+}
+
+/* =========================
+   CORES DOS TEXTOS
+========================= */
+
+.cor-texto-green {
+    color: black !important;
+}
+
+.cor-texto-blue {
+    color: #22577A !important;
+}
+
+.cor-texto-yellow {
+    color: rgb(113, 119, 23) !important;
+}
+
+.cor-texto-roxo {
+    color: black !important;
+}
+
+.cor-texto-laranja {
+    color: black !important;
+}
+
+/* =========================
+   TEXTO EM DESTAQUE
+========================= */
+
+.item-caixa > b {
+    color: rgba(0, 0, 0, 0.75) !important;
+}
+
+.grifado {
+    color: #6A1AB2;
+    font-weight: bold;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+    div.caixa {
+        padding: 18px 25px;
+        border-radius: 18px;
+    }
+
+    div.caixa > div.item-caixa {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    div.caixa {
+        padding: 15px 20px;
+        border-radius: 15px;
+        font-size: 0.95rem;
+    }
+
+    .titulo-caixa {
+        font-size: 1.15rem;
+    }
+
+    div.caixa > div.item-caixa {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 10px;
+    }
+}

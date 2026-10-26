@@ -1,0 +1,83 @@
+{
+  "Package": "CI1",
+  "Institution": {
+      "AroucaID": 4511681,
+      "Acronym": "CPqAM/FIOCRUZ",
+      "Name": "Centro de Pesquisas Aggeu Magalhães - FIOCRUZ"
+  },
+  "Resource": {
+      "Name": "Catálogo de Componentes EAD",
+      "Language": "pt-BR",
+      "CreationDate": "2026-06-18",
+      "Review": 2,
+      "ReviewDate": "2026-06-26",
+      "CoverImage": "capa.png"
+  },
+  "SupportedDevices": [
+      "Desktop",
+      "Smartphone",
+      "Tablet"
+  ],
+  "Video": {
+      "Formats": [],
+      "Resolutions": []
+  },
+  "Persistence": {
+      "InstitutionAcronym": "FIOCRUZ_PE",
+      "Version": "0001",
+      "Name": "VETOR_AEDES"
+  },
+  "Dictionary": [
+    {
+        "Variable": "STATUS",
+        "Description":"Variável padrão, indica o status do recurso.",
+        "Format": {
+            "status": "Valor nominal textual do status podendo ter os seguintes valores 'attended', 'attempted', 'completed'",
+            "percentage": "Valor inteiro entre 0 e 100, para verificar a evolução do usuário no recurso",
+            "LTIvalue": "Valor ponto flutuante entre 0 e 1, 1 = todas as fases concluidas, 0 = nenhuma fase concluida"
+        }
+    },
+    {
+        "Variable": "VIDEO",
+        "Description": "Indica informações acerca dos vídeos reproduzidos no curso",
+        "Format": {
+            "resolution": "Valor textual, deve estar entre os valores disponíveis no recurso, com base no arquivo de configuração se_unasus_pack.json, exemplo '360p'"
+        }
+    },
+    {
+        "Variable": "NAVIGATION",
+        "Description": "Indica informações acerca da navegação do usuários no curso",
+        "Format": {
+            "current": "Valor textual que indica o marcador atual de navegação do usuário",
+            "previous": "Valor textual que indica o marcador anterior de navegação do usuário, vazio se não existir informação anterior"
+        }
+    },
+    {
+        "Variable": "DOWNLOAD",
+        "Description": "Indica informações acerca do acesso a recursos em arquivo para download",
+        "Format": {
+            "current": "Valor textual que indica o marcador de navegação do usuário no momento do download",
+            "filetype": "Indica o tipo de arquivo, os valores possíveis são 'text', 'video', 'audio', 'image', 'other'",
+            "filename": "Valor textual que indica que o usuário realizou um download no marcador atual de navegação, indicado pelo nome do arquivo + extensão"
+        }
+    },
+    {
+        "Variable": "EXTERNAL_LINK",
+        "Description": "Indica informações acerca do acesso a links que abram outros conteúdos fora do recurso",
+        "Format": {
+            "current": "Valor textual que indica a url de navegação do usuário no momento do acesso ao link.",
+            "url": "Valor textual que indica o endereço que o usuário foi levado para visualização de conteúdo externo."
+        }
+    },
+    {
+        "Variable": "TEST_CONTROL",
+        "Description": "Conjunto de nomes de atividades avaliativas. Todas as atividades avaliativas que cumpriram  com os critérios de aprovação são armazenadas dentro do vetor",
+        "Format": {}
+    },
+    {
+        "Variable": "STATUS_PAGES",
+        "Description": "Objeto composto por um conjunto de propriedades que representam o status de navegação de uma coleção de páginas.",
+        "Format": {}
+    }
+  ]
+}

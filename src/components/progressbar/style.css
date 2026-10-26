@@ -1,0 +1,27 @@
+.progress {
+  display: flex;
+  overflow: hidden;
+  font-size: .75rem;
+  background-color: #e9ecef;
+}
+
+#unasus-side-menu-wrapper .progress{
+  height: 1rem;
+}
+
+#unasus-page-wrapper .progress{
+  height: 2rem;
+  border-radius: .25rem;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+  text-align: center;
+  background-color: #FFd13F;
+  transition: width .6s ease;
+  min-width: 35px;
+  
+}

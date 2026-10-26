@@ -1,0 +1,687 @@
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+.main-q {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.container-q {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   TÍTULO DO QUIZ
+========================= */
+
+.box-icon-q {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.box-icon-q h1 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+
+/* =========================
+   TEXTO INTRODUTÓRIO
+========================= */
+
+.sub-q {
+  margin: 20px 0;
+  text-align: left;
+  line-height: 1.5;
+}
+
+
+/* =========================
+   CAIXA PRINCIPAL DO QUIZ
+========================= */
+
+.box-q {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-height: 410px;
+
+  margin: 30px 0;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background-color: #ffffff;
+
+  border-radius: 8px;
+
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   SEM QUESTÕES
+========================= */
+
+.quiz-empty {
+  width: 100%;
+  padding: 30px 10px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+
+  font-size: 1rem;
+
+  color: #666666;
+}
+
+
+/* =========================
+   BARRA DE PROGRESSO
+========================= */
+
+/*
+  IMPORTANTE:
+  NÃO usar .progress-bar
+  para evitar conflito com outros CSS
+*/
+
+.quiz-progress {
+  display: flex;
+
+  width: 100%;
+
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  gap: 10px;
+
+  box-sizing: border-box;
+}
+
+.quiz-progress-step {
+  flex: 1;
+
+  height: 4px;
+
+  background-color: #cccccc;
+
+  transition: background-color 0.3s ease;
+}
+
+
+/* QUESTÃO CORRETA */
+
+.quiz-progress-step.correct {
+  background-color: #34C759;
+}
+
+
+/* QUESTÃO INCORRETA */
+
+.quiz-progress-step.incorrect {
+  background-color: #FF3B30;
+}
+
+
+/* QUESTÃO NÃO RESPONDIDA */
+
+.quiz-progress-step.not-answered {
+  background-color: #cccccc;
+}
+
+
+/* =========================
+   ÁREA DAS QUESTÕES
+========================= */
+
+.box-t {
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+
+  height: 100%;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   ENUNCIADO
+========================= */
+
+.question {
+  margin: 15px 0 20px 0;
+
+  font-weight: 700;
+
+  line-height: 1.5;
+
+  color: #000000;
+}
+
+
+/* Caso o enunciado tenha HTML */
+
+.question p {
+  margin: 0;
+}
+
+
+/* =========================
+   ALTERNATIVAS
+========================= */
+
+.option-box {
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  min-height: 44px;
+
+  margin-bottom: 10px;
+
+  padding: 10px 15px;
+
+  box-sizing: border-box;
+
+  cursor: pointer;
+
+  border: 2px solid #dddddd;
+
+  border-radius: 50px;
+
+  background-color: #ffffff;
+
+  color: #000000;
+
+  transition:
+    background-color 0.3s,
+    border-color 0.3s;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.option-box:hover {
+  background-color: #f7f2ff;
+
+  border-color: #C0A7FC;
+}
+
+
+/* =========================
+   OPÇÃO SELECIONADA
+========================= */
+
+.option-box.selected {
+  background-color: #EEE5FF;
+
+  border-color: #C0A7FC;
+}
+
+
+/* =========================
+   LETRAS A, B, C, D...
+========================= */
+
+.circle {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 22px;
+
+  height: 22px;
+
+  margin-right: 10px;
+
+  border-radius: 50%;
+
+  background-color:
+    var(
+      --quartenary-color,
+      #eeeeee
+    );
+
+  color: #000000;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   TEXTO DAS ALTERNATIVAS
+========================= */
+
+.option-text {
+  flex: 1;
+
+  min-width: 0;
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
+
+  color: #000000;
+}
+
+
+/* Remove margens extras quando
+   o texto vem com HTML */
+
+.option-text p {
+  margin: 0;
+}
+
+.option-text ul,
+.option-text ol {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+
+/* =========================
+   RESPOSTA CORRETA
+========================= */
+
+.option-box.correct {
+  background-color: rgba(52, 199, 89, 0.12);
+
+  border-color: #34C759;
+
+  color: #000000;
+}
+
+.ccorrect {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 22px;
+
+  height: 22px;
+
+  margin-right: 10px;
+
+  border-radius: 50%;
+
+  background-color: #34C759;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   RESPOSTA INCORRETA
+========================= */
+
+.option-box.incorrect {
+  background-color: #FFE5E5;
+
+  border-color: #FF3B30;
+
+  color: #000000;
+}
+
+.cincorrect {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  width: 22px;
+
+  height: 22px;
+
+  margin-right: 10px;
+
+  border-radius: 50%;
+
+  background-color: #FF3B30;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   FEEDBACK
+========================= */
+
+.feedback-box {
+  width: 100%;
+
+  margin-top: 10px;
+
+  padding: 15px;
+
+  box-sizing: border-box;
+
+  background-color: #DBD4E5;
+}
+
+.feedback-box h3 {
+  margin: 0;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  line-height: 1.4;
+}
+
+
+/* =========================
+   TEXTO DO FEEDBACK
+========================= */
+
+.feadback-q {
+  margin: 15px 0 0 0;
+
+  line-height: 1.5;
+
+  color: #000000;
+}
+
+.feadback-q p {
+  margin: 5px 0;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.box-footer {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-top: 20px;
+
+  margin-bottom: 10px;
+
+  gap: 10px;
+}
+
+
+/* =========================
+   RESULTADO FINAL
+========================= */
+
+.box-fin {
+  width: 100%;
+
+  height: 100%;
+
+  box-sizing: border-box;
+}
+
+.finish-box {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 100%;
+
+  min-height: 300px;
+
+  padding: 30px 15px;
+
+  box-sizing: border-box;
+
+  text-align: center;
+}
+
+
+/* =========================
+   TÍTULO FINAL
+========================= */
+
+.finish-box h1 {
+  margin: 0 0 20px 0;
+
+  font-size: 1.5rem;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   TEXTO FINAL
+========================= */
+
+.finish-text {
+  margin: 0 0 15px 0;
+
+  font-weight: 700;
+
+  line-height: 1.5;
+}
+
+
+/* =========================
+   PONTUAÇÃO FINAL
+========================= */
+
+.finish-point {
+  margin: 10px 0 0 0;
+
+  font-weight: 700;
+
+  font-size: 1.8rem;
+}
+
+.finish-label {
+  margin: 0 0 25px 0;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   RESPONSIVIDADE - TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .main-q {
+    width: 100%;
+  }
+
+  .box-q {
+    min-height: auto;
+
+    padding: 15px;
+
+    margin: 20px 0;
+  }
+
+  .box-icon-q h1 {
+    font-size: 1.2rem;
+  }
+
+  .quiz-progress {
+    gap: 6px;
+  }
+
+  .quiz-progress-step {
+    height: 4px;
+  }
+
+  .question {
+    font-size: 0.95rem;
+
+    margin-bottom: 15px;
+  }
+
+  .option-box {
+    padding: 10px 12px;
+
+    border-radius: 25px;
+  }
+
+  .option-text {
+    font-size: 0.9rem;
+  }
+
+  .feedback-box {
+    padding: 12px;
+  }
+
+  .finish-box {
+    min-height: 250px;
+
+    padding: 25px 10px;
+  }
+}
+
+
+/* =========================
+   RESPONSIVIDADE - CELULAR
+========================= */
+
+@media (max-width: 480px) {
+
+  .main-q {
+    margin-top: 10px;
+
+    margin-bottom: 10px;
+  }
+
+  .box-icon-q h1 {
+    font-size: 1.1rem;
+  }
+
+  .sub-q {
+    margin: 15px 0;
+
+    font-size: 0.9rem;
+  }
+
+  .box-q {
+    margin: 15px 0;
+
+    padding: 12px;
+
+    border-radius: 6px;
+  }
+
+  .quiz-progress {
+    gap: 4px;
+
+    margin-bottom: 15px;
+  }
+
+  .quiz-progress-step {
+    height: 3px;
+  }
+
+  .question {
+    font-size: 0.95rem;
+
+    line-height: 1.4;
+  }
+
+  .option-box {
+    padding: 9px 10px;
+
+    border-radius: 20px;
+
+    min-height: 42px;
+  }
+
+  .circle,
+  .ccorrect,
+  .cincorrect {
+    width: 22px;
+
+    height: 22px;
+
+    margin-right: 8px;
+
+    font-size: 10px;
+  }
+
+  .option-text {
+    font-size: 0.85rem;
+
+    line-height: 1.4;
+  }
+
+  .feedback-box {
+    padding: 10px;
+  }
+
+  .feedback-box h3 {
+    font-size: 0.95rem;
+  }
+
+  .feadback-q {
+    font-size: 0.85rem;
+  }
+
+  .box-footer {
+    margin-top: 15px;
+  }
+
+  .finish-box {
+    min-height: 220px;
+
+    padding: 20px 10px;
+  }
+
+  .finish-box h1 {
+    font-size: 1.3rem;
+  }
+
+  .finish-point {
+    font-size: 1.5rem;
+  }
+}

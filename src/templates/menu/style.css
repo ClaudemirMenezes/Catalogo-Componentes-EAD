@@ -1,0 +1,195 @@
+#unasus-side-menu-wrapper {
+    width: 100%;
+    height: calc(100% - 66px);
+    font-size: 0.95rem;
+    overflow-y: auto;
+    
+}
+
+#unasus-side-menu-wrapper li {
+    display: table;
+    width: 100%;
+    padding: 16px 20px 16px 25px;
+    color: #ffffff;
+    border-bottom: 1px solid var(--secondary-color);
+    cursor: pointer;
+    word-wrap: break-word;
+}
+
+#unasus-side-menu-wrapper li:hover { background: var(--auxiliary-color); }
+
+.unasus_side_menu_wrapper_arrow_effect { transform: rotate(90deg); }
+
+#unasus-side-menu-wrapper li.group .unasus-side-menu-wrapper-front,
+#unasus-side-menu-wrapper li {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+
+#unasus-side-menu-wrapper li.group .unasus-side-menu-wrapper-front {
+    display: table;
+    width: 100%;
+    cursor: pointer;
+    padding-bottom: 16px;
+    padding-right: 25px;
+}
+
+#unasus-side-menu-wrapper li.group span { 
+    display: block; 
+    float: left;
+}
+
+#unasus-side-menu-wrapper li.group span:nth-child(2) {
+    padding-left: 10px;
+    width: calc(100% - 10px);
+    color: #ffffff;
+}
+
+#unasus-side-menu-wrapper li.group .arrow {
+    position: relative;
+    left: -4px; 
+    transition: transform 0.5s; 
+}
+
+#unasus-side-menu-wrapper li.group .arrow::after {
+    content: '';
+    display: inline-block;
+    border-top: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-left: 5px solid #ffffff;
+    border-bottom: 5px solid transparent;
+}
+
+#unasus-side-menu-wrapper li.group ul {
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+#unasus-side-menu-wrapper li.group { 
+    padding-bottom: 0; 
+    padding-right: 0;
+}
+
+#unasus-side-menu-wrapper li.group:hover { background: none; }
+
+#unasus-side-menu-wrapper li.group li:last-child { border-bottom: none; }
+
+#unasus-side-menu-wrapper li.group li { border-left: 1px solid var(--secondary-color); }
+
+#unasus-side-menu-wrapper .unasus-side-menu-title-item,
+#unasus-side-menu-wrapper .unasus-side-menu-checked { float: left; }
+
+#unasus-side-menu-wrapper .unasus-side-menu-title-item {
+    color: #ffffff;
+    width: calc(100% - 30px)
+}
+
+#unasus-side-menu-wrapper .unasus-side-menu-checked {
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin-left: 15px;
+}
+
+#unasus-side-menu-wrapper .unasus-side-menu-checked::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: -2px;
+    display: inline-block;
+    width: 14px;
+    height: 2px;
+    background: #9bf09b;
+    transform: rotate(130deg);
+}
+
+#unasus-side-menu-wrapper .unasus-side-menu-checked::after {
+    content: '';
+    position: absolute;
+    bottom: 3px;
+    left: 0px;
+    display: inline-block;
+    width: 7px;
+    height: 2px;
+    background: #9bf09b;
+    transform: rotate(-136deg);
+}
+
+
+/* progress bar */
+
+.unasus-side-menu-title-item .progress-container {
+    width: 100% !important;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px 16px 25px;
+    border-bottom: 1px solid var(--secondary-color);
+    cursor: default;
+}
+
+.progress-text {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 16.34px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.progress-circles {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    
+}
+
+.progress-svg {
+    transform: rotate(-90deg);
+    width: 100%;
+    height: 100%;
+}
+
+.progress-bg {
+    fill: none;
+    stroke: #f0f0f0;
+    stroke-width: 1.8;
+}
+
+.progress-bar {
+    fill: none;
+    stroke: #FFD13F;
+    stroke-width: 2.8;
+    stroke-linecap: round;
+    transition: stroke-dasharray 0.3s ease;
+}
+
+.progress-value {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+.cx-2 {
+    font-size: 21px;
+}
+
+#cx-down-2 {
+    font-size: 12px;
+}
+
+#cx-simples2 {
+    width: auto !important;
+}

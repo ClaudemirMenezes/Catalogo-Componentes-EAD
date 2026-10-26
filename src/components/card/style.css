@@ -1,0 +1,70 @@
+.unasus-card {
+    width: 100%;
+    border: 1px solid #dddddd;
+    
+    padding: 1rem;
+    box-shadow: 4px 4px 9px rgba(0,0,0,30%);
+}
+
+.rounded_corners {
+    border-radius: 10px;
+}
+
+.fundo-branco {
+    background: #ffffff;
+}
+
+.fundo-azul {
+    background-color: #22577A;
+    font-size: 16px;
+    
+}
+.fundo-EAD {
+    background-color: #cbcbcbcb;
+    font-size: 16px;
+    
+}
+
+.fundo-amareloEAD {
+    background-color: #FFD13F;
+}
+
+.fundo-verde {
+    background-color: darkseagreen;
+}
+
+.fundo-amarelo {
+    background-color: darkkhaki;
+}
+
+.fundo-laranja {
+    background-color: coral;
+}
+
+.fundo-vermelho {
+    background-color: tomato;
+}
+
+.fundo-lilas {
+    background-color: darkorchid;
+}
+
+.titulos-card{
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.fundo-EAD p {
+    padding: 0.5rem;
+    font-size: 12px;
+    color: black;
+    text-align: justify;
+    
+}
+
+.img-ajustada{
+    max-width: 80%;
+    height: 50%;
+}
+

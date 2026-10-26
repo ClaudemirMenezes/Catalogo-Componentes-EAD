@@ -1,0 +1,98 @@
+.unasus-timeline {
+    border-left: 2px solid var(--base-color);
+    padding-left: 20px;
+}
+
+.unasus-timeline .title-timeline {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 4px 8px 4px 8px;
+    background: var(--base-color);
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.7em;
+    text-transform: uppercase;
+}
+
+.unasus-timeline .title-timeline::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    left: -27px;
+    width: 8px;
+    height: 8px;
+    background: var(--base-color);
+    border-radius: 50%;
+    border: 2px solid var(--base-color);
+}
+
+.unasus-timeline .unasus-timeline-moment {
+    margin-bottom: 20px;
+}
+
+.unasus-timeline .unasus-timeline-moment .front::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -28px;
+    width: 8px;
+    height: 8px;
+    background: #f2f2f2;
+    border-radius: 50%;
+    border: 2px solid var(--base-color);
+}
+
+.unasus-timeline-moment {
+    width: 100%;
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-bottom: none;
+}
+
+.unasus-timeline-moment .front {
+    position: relative;
+    padding: 1em;
+    border-bottom: 1px solid #dddddd;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.unasus-timeline-moment .content {
+    padding: 1.5em;
+}
+
+.unasus-timeline-moment .content-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.unasus-timeline-moment .front .btn-accordion {
+    position: relative;
+    top: -3px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    float: right;
+}
+
+.unasus-timeline-moment .front .btn-accordion span {
+    position: absolute;
+    right: 5px;
+    top: 13.5px;
+    display: block;
+    width: 10px;
+    height: 1px;
+    background: #333333;
+}
+
+.unasus-timeline-moment .front .btn-accordion span:nth-child(1) {
+    transition: opacity 0.5s;
+    opacity: 1;
+    transform: rotate(90deg);
+    
+}
+
+.unasus_moment_hide_bar { opacity: 0 !important; }

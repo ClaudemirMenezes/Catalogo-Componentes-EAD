@@ -1,0 +1,491 @@
+/* =========================
+   ESTRUTURA PRINCIPAL
+========================= */
+
+.hotspot-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.image-container {
+  position: relative;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.bg-image {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/* =========================
+   MARCADOR
+========================= */
+
+.hotspot-point {
+  position: absolute;
+  z-index: 10;
+  isolation: isolate;
+
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.hotspot-point.active {
+  z-index: 30;
+}
+
+.icon-circle {
+  position: relative;
+
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.28),
+    inset 0 0 4px rgba(0, 0, 0, 0.08);
+
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.default-icon {
+  line-height: 1;
+}
+
+/* Marcador no hover e quando estiver aberto */
+
+.hotspot-point:hover .icon-circle,
+.hotspot-point.active .icon-circle {
+  background: #8A55D6;
+  border-color: #8A55D6;
+
+  transform: scale(1.1);
+
+  box-shadow:
+    0 5px 14px rgba(0, 0, 0, 0.25),
+    0 0 0 4px rgba(47, 117, 86, 0.22);
+}
+
+/* =========================
+   MARCADOR VISUALIZADO
+========================= */
+
+.check-mark {
+  position: absolute;
+  top: -7px;
+  right: -7px;
+
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #28a745;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1;
+
+  box-sizing: border-box;
+}
+
+/* =========================
+   CAIXA DE INFORMAÇÕES
+========================= */
+
+.custom-tooltip {
+  --tooltip-x: -50%;
+
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+
+  width: 320px;
+  max-width: min(320px, calc(100vw - 24px));
+
+  background: #ffffff;
+  border: 1px solid #d5ddd9;
+  border-radius: 12px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 14px 35px rgba(0, 0, 0, 0.2),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+
+  cursor: default;
+  z-index: 100;
+  isolation: isolate;
+  overflow: visible;
+
+  transform: translateX(var(--tooltip-x));
+
+  animation: hotspot-popup 0.25s ease;
+}
+
+.hotspot-point[data-side="left"] .custom-tooltip {
+  --tooltip-x: 0;
+  left: 0;
+  right: auto;
+}
+
+.hotspot-point[data-side="right"] .custom-tooltip {
+  --tooltip-x: 0;
+  left: auto;
+  right: 0;
+}
+
+.hotspot-point[data-side="center"] .custom-tooltip {
+  --tooltip-x: -50%;
+  left: 50%;
+  right: auto;
+}
+
+/* Seta inferior da caixa */
+
+.custom-tooltip::after {
+  content: "";
+
+  position: absolute;
+  left: 50%;
+  bottom: -11px;
+
+  width: 20px;
+  height: 20px;
+
+  background: #ffffff;
+  border-right: 1px solid #d5ddd9;
+  border-bottom: 1px solid #d5ddd9;
+
+  transform: translateX(-50%) rotate(45deg);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hotspot-point[data-side="left"] .custom-tooltip::after {
+  left: 24px;
+  transform: translateX(0) rotate(45deg);
+}
+
+.hotspot-point[data-side="right"] .custom-tooltip::after {
+  left: auto;
+  right: 24px;
+  transform: translateX(0) rotate(45deg);
+}
+
+.tooltip-header,
+.tooltip-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   CABEÇALHO COM TÍTULO
+========================= */
+
+.tooltip-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+
+  padding: 13px 16px;
+
+  background: #8A55D6;
+  border-radius: 11px 11px 0 0;
+
+
+  color: #ffffff;
+}
+
+.tooltip-header strong {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: left;
+
+  color: #ffffff !important;
+}
+
+.tooltip-header strong em {
+  color: #ffffff !important;
+  font-style: italic;
+}
+
+/* =========================
+   BOTÃO FECHAR
+========================= */
+
+.tooltip-close {
+  flex-shrink: 0;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  background: rgba(255, 255, 255, 0.17);
+  border: none;
+  border-radius: 50%;
+
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.tooltip-close:hover {
+  background: rgba(255, 255, 255, 0.32);
+  transform: scale(1.08);
+}
+
+/* X quando a caixa não possui título */
+
+.tooltip-close-only {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  z-index: 5;
+
+  background: #4B277F;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.2);
+}
+
+.tooltip-close-only:hover {
+  background: #4B277F;
+}
+
+/* Quando não houver título, aumenta o espaço superior */
+
+.tooltip-without-title .tooltip-body {
+  padding-top: 46px;
+}
+
+/* =========================
+   CORPO DA CAIXA
+========================= */
+
+.tooltip-body {
+  position: relative;
+  z-index: 2;
+
+  padding: 16px;
+
+  background: #ffffff;
+  border-radius: 0 0 11px 11px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333333;
+
+  box-sizing: border-box;
+}
+
+/* Caixa totalmente arredondada quando não houver título */
+
+.tooltip-without-title .tooltip-body {
+  border-radius: 11px;
+}
+
+.tooltip-body p {
+  margin: 0;
+
+  color: #333333;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.55;
+
+  text-align: left;
+}
+
+/* Espaço entre a imagem e a descrição */
+
+.tooltip-img + .tooltip-body p {
+  margin-top: 12px;
+}
+
+/* Como o seletor acima não funciona entre elementos irmãos
+   internos da mesma div em todos os casos, usamos também: */
+
+.tooltip-img ~ p {
+  margin-top: 12px;
+}
+
+/* =========================
+   IMAGEM NA DESCRIÇÃO
+========================= */
+
+.tooltip-img {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 260px;
+
+  margin: 0;
+
+  border: 1px solid #e0e5e2;
+  border-radius: 8px;
+
+  object-fit: contain;
+
+  box-sizing: border-box;
+}
+
+/* Legenda opcional da imagem */
+
+.tooltip-image-caption {
+  display: block;
+
+  margin-top: 6px;
+
+  color: #666666;
+
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-style: italic;
+  line-height: 1.4;
+
+  text-align: center;
+}
+
+.tooltip-image-caption + p {
+  margin-top: 12px;
+}
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+@keyframes hotspot-popup {
+  from {
+    opacity: 0;
+    transform: translateX(var(--tooltip-x)) scale(0.96);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(var(--tooltip-x)) scale(1);
+  }
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+  .icon-circle {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
+  }
+
+  .custom-tooltip {
+    bottom: 48px;
+
+    width: 280px;
+    max-width: 82vw;
+  }
+
+  .tooltip-header {
+    padding: 11px 13px;
+  }
+
+  .tooltip-header strong {
+    font-size: 14px;
+  }
+
+  .tooltip-body {
+    padding: 13px;
+  }
+
+  .tooltip-without-title .tooltip-body {
+    padding-top: 44px;
+  }
+
+  .tooltip-body p {
+    font-size: 14px;
+  }
+
+  .tooltip-img {
+    max-height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-circle {
+    width: 30px;
+    height: 30px;
+
+    font-size: 13px;
+  }
+
+  .custom-tooltip {
+    bottom: 43px;
+
+    width: 245px;
+    max-width: 78vw;
+  }
+
+  .tooltip-close {
+    width: 25px;
+    height: 25px;
+
+    font-size: 19px;
+  }
+
+  .tooltip-body {
+    padding: 12px;
+  }
+
+  .tooltip-without-title .tooltip-body {
+    padding-top: 42px;
+  }
+
+  .tooltip-img {
+    max-height: 190px;
+  }
+}

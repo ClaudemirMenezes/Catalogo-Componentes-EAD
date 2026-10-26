@@ -1,0 +1,120 @@
+.unasus-accordion-completo {
+  width: 708px;
+  margin: 15px auto;
+  padding-bottom: 0;
+}
+
+.unasus-accordion-completo .unasus-bellow-completo:not(:last-child) .content-completo {
+  border-bottom: none;
+}
+
+.unasus-bellow-completo .front-completo {
+  font-size: 17px;
+  cursor: pointer;
+  line-height: 28px;
+  padding-top: 8px;
+  padding-bottom: 12px !important; 
+  padding-left: 1.5rem;
+  background: #DC6413;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-bottom: solid 1px #fff;
+  width: 100%;
+}
+
+.unasus-bellow-completo .front-completo .full-space {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px; /* distância entre o texto e a seta */
+}
+
+.arrow-icon {
+  margin-right: 1.5rem;
+  margin-top: 0.8rem;
+  width: 12px;
+  height: 8px;
+}
+
+.unasus-bellow-completo .content-completo {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s;
+  overflow-y: auto;
+  font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  border-left: solid 1px #cbcbcb;
+  border-right: solid 1px #cbcbcb;
+  border-bottom: solid 1px #cbcbcb;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.unasus-bellow-completo .content-completo div {
+  padding: 1rem;
+}
+
+.unasus-bellow-completo .front-completo:hover .btn-bellow-completo {
+  background: var(--secondary-color);
+}
+
+.unasus-bellow-completo .btn-bellow-completo .bar:nth-child(1) {
+  transition: opacity 0.5s;
+  transform: rotate(90deg);
+  opacity: 1;
+}
+
+.unasus_bellow_hide_bar {
+  opacity: 0 !important;
+}
+
+.unasus-accordion-completo 
+.unasus-bellow-completo 
+.front-completo,
+.unasus-accordion-completo 
+.unasus-bellow-completo 
+.front-completo *,
+.unasus-accordion-completo 
+.unasus-bellow-completo 
+.front-completo .full-space {
+  color: #ffffff !important;
+}
+/* ======== RESPONSIVIDADE ======== */
+@media (max-width: 1024px) {
+  .unasus-accordion-completo {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .unasus-accordion-completo {
+    width: 95%;
+  }
+
+  .unasus-bellow-completo .front-completo {
+    font-size: 15px;
+    padding-left: 1rem;
+  }
+
+  .arrow-icon {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .unasus-accordion-completo {
+    width: 100%;
+    margin: 10px auto;
+    padding: 0 0.5rem;
+  }
+
+  .unasus-bellow-completo .front-completo {
+    font-size: 14px;
+    padding-left: 0.8rem;
+  }
+
+  .arrow-icon {
+    width: 10px;
+    height: 6px;
+    margin-right: 0.8rem;
+  }
+}

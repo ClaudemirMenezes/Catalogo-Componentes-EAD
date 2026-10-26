@@ -1,0 +1,174 @@
+:root {
+  --table-header-bg-Horiz: #4B277F;
+  --table-header-text-Horiz: #ffffff;
+  --table-row-odd-bg-Horiz: #ffffff;
+  --table-row-even-bg-Horiz: #f3f4f6;
+  --table-border-color-Horiz: #b9c0c8;
+  --font-family-base-Horiz: 'Livvic', sans-serif;
+}
+
+/* Container */
+.table-box-Horiz {
+  width: 100%;
+  padding: 1rem;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+/* Tabela */
+.table-box-Horiz table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-family: var(--font-family-base-Horiz);
+  border: 1px solid var(--table-border-color-Horiz);
+}
+
+/* Cabeçalho */
+.tabela-header-Horiz th {
+  background: var(--table-header-bg-Horiz);
+  color: var(--table-header-text-Horiz);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  padding: 12px 10px;
+  border: 1px solid var(--table-border-color-Horiz);
+  vertical-align: middle;
+  line-height: 1.3;
+}
+
+/* Corpo */
+.table-box-Horiz td {
+  padding: 12px 10px;
+  border: 1px solid var(--table-border-color-Horiz);
+  font-size: 13px;
+  color: #000;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.45;
+  word-break: break-word;
+}
+
+/* Linhas alternadas */
+.table-box-Horiz tbody tr:nth-child(odd) {
+  background: #fff;
+}
+
+.table-box-Horiz tbody tr:nth-child(even) {
+  background: #DBD4E5;
+}
+
+/* Hover */
+.table-box-Horiz tbody tr:hover {
+  background: #DBD4E5;
+}
+
+/* Primeira coluna */
+.table-box-Horiz th:first-child,
+.table-box-Horiz td:first-child {
+  min-width: 160px;
+  width: 160px;
+  background: #4B277F;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+
+
+/* Segunda coluna */
+.table-box-Horiz th:nth-child(2),
+.table-box-Horiz td:nth-child(2){
+    width:22%;
+}
+
+/* Terceira coluna */
+.table-box-Horiz th:nth-child(3),
+.table-box-Horiz td:nth-child(3){
+    width:22%;
+}
+
+/* Quarta coluna */
+.table-box-Horiz th:nth-child(4),
+.table-box-Horiz td:nth-child(4){
+    width:22%;
+}
+
+/* Quinta coluna */
+.table-box-Horiz th:nth-child(5),
+.table-box-Horiz td:nth-child(5){
+    width:22%;
+}
+
+/* Responsividade */
+@media (max-width:1024px){
+
+    .tabela-header-Horiz th{
+        font-size:13px;
+        padding:10px;
+    }
+
+    .table-box-Horiz td{
+        font-size:12px;
+        padding:10px;
+    }
+
+}
+
+.cards-Horiz{
+  display: none;
+}
+
+@media (max-width:768px){
+
+  .table-box-Horiz{
+    display: none;
+  }
+
+  .cards-Horiz{
+    display: block;
+    padding: .5rem;
+    font-family: var(--font-family-base-Horiz);
+  }
+
+  .card-Horiz{
+    background: #fff;
+    border: 1px solid var(--table-border-color-Horiz);
+    margin-bottom: 16px;
+    box-shadow: 0 3px 8px rgba(0,0,0,.08);
+  }
+
+  .card-Horiz h3{
+    margin: 0;
+    padding: 14px;
+    background: #4B277F;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .card-item-Horiz{
+    padding: 12px 14px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .card-item-Horiz:last-child{
+    border-bottom: none;
+  }
+
+  .card-item-Horiz strong{
+    display: block;
+    color: #4B277F;
+    margin-bottom: 5px;
+    font-size: 13px;
+  }
+
+  .card-item-Horiz p{
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #000;
+  }
+
+}

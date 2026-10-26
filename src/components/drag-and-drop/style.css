@@ -1,0 +1,782 @@
+/* =========================
+   CONTAINER GERAL
+========================= */
+
+.drag-and-drop-wrapper {
+    margin: 20px auto;
+
+    width: 100%;
+    max-width: 1000px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+}
+
+
+/* =========================
+   MENSAGEM FINAL
+========================= */
+
+.completed-message {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    font-size: 1.2em;
+    font-weight: 600;
+
+    color: #39b54a;
+    border: 1px solid #39b54a;
+    background: hsl(128, 79%, 90%);
+
+    padding: 12px 20px;
+    margin-bottom: 20px;
+
+    border-radius: 8px;
+
+    text-align: center;
+}
+    
+
+/* =========================
+   LAYOUT PRINCIPAL
+========================= */
+
+.drag-layout {
+    display: flex;
+
+    align-items: stretch;
+    justify-content: space-between;
+
+    width: 100%;
+
+    gap: 30px;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+}
+
+
+/* =========================
+   COLUNAS
+========================= */
+
+.drag-column {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   COLUNA A
+========================= */
+
+/*
+   A coluna A NÃO é sticky.
+
+   Ela apenas precisa ocupar
+   a mesma altura da Coluna B
+   para permitir que as opções
+   tenham espaço para acompanhar
+   a rolagem.
+*/
+
+.drag-column-a {
+    flex: 1;
+
+    position: relative;
+
+    align-self: stretch;
+
+    min-width: 0;
+
+    height: auto;
+
+    overflow: visible;
+
+    z-index: 10;
+}
+
+
+/* =========================
+   COLUNA B
+========================= */
+
+.drag-column-b {
+    flex: 3;
+
+    min-width: 0;
+}
+
+
+/* =========================
+   TÍTULO DAS COLUNAS
+========================= */
+
+.drag-column-title {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 0 0 12px 0;
+
+    padding: 10px 15px;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    background-color: #4B277F;
+
+    border-radius: 6px;
+
+    /*
+       Título fica no fluxo normal.
+       Não acompanha a rolagem.
+    */
+
+    position: static;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   OPÇÕES DA COLUNA A
+========================= */
+
+/*
+   SOMENTE AS OPÇÕES
+   acompanham a rolagem.
+*/
+
+.drag-options {
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    width: 100%;
+
+    gap: 12px;
+
+    padding: 10px 20px 10px 10px;
+
+    box-sizing: border-box;
+
+    position: sticky;
+
+    /*
+       Distância do topo
+       enquanto acompanha
+       a rolagem.
+    */
+
+    top: 80px;
+
+    height: fit-content;
+
+    align-self: flex-start;
+
+    background: transparent;
+
+    overflow: visible;
+
+    border-right: none;
+
+    z-index: 9;
+}
+
+
+/* =========================
+   TRAÇO DAS OPÇÕES
+========================= */
+
+.drag-options.has-options {
+    border-right: 2px solid #DC6413;
+}
+
+
+/* Remove o traço quando
+   não houver mais opções */
+
+.drag-options:not(.has-options) {
+    border-right: none;
+}
+
+
+/* =========================
+   ITEM ARRASTÁVEL
+========================= */
+
+.drag-item {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    background-color: #ffffff;
+
+    padding: 10px 14px;
+
+    border: 1px solid #DC6413;
+
+    border-radius: 6px;
+
+    cursor: move;
+
+    transition: all 0.3s ease;
+
+    font-size: 1em;
+
+    line-height: 1.4;
+
+    text-align: left;
+
+    word-break: break-word;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.drag-item:hover {
+    background-color: #f7f7f7;
+}
+
+
+/* =========================
+   RESPOSTA CORRETA
+========================= */
+
+.drag-item.correct {
+    background-color: #a3cfbb;
+
+    border-color: #2e7d32;
+
+    color: #000;
+}
+
+
+/* =========================
+   RESPOSTA ERRADA
+========================= */
+
+.drag-item.wrong {
+    background-color: #f1aeb5;
+
+    border-color: #b3261e;
+
+    color: #000;
+}
+
+
+/* =========================
+   COLUNA DAS FRASES
+========================= */
+
+.sentences-container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    width: 100%;
+
+    min-width: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   CAIXA DE CADA FRASE
+========================= */
+
+.drag-sentence-box {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 2px solid #4B277F;
+
+    border-radius: 12px;
+
+    background-color: #DBD4E5;
+
+    color: #000;
+
+    padding: 20px;
+
+    margin-bottom: 20px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+
+/* =========================
+   TEXTO DA FRASE
+========================= */
+
+.drag-sentence {
+    width: 100%;
+
+    margin: 0;
+
+    font-size: 1.05em;
+
+    line-height: 1.6;
+
+    text-align: left;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   TEXTO ANTES DA LACUNA
+========================= */
+
+.sentence-text {
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   ÁREA PARA SOLTAR
+========================= */
+
+.drop-zone {
+    display: block;
+
+    width: 100%;
+
+    min-height: 50px;
+
+    box-sizing: border-box;
+
+    margin-top: 10px;
+
+    padding: 6px;
+
+    border: 2px dashed #DC6413;
+
+    border-radius: 6px;
+}
+
+
+/* =========================
+   ITEM DENTRO DA DROP-ZONE
+========================= */
+
+.drop-zone .drag-item {
+    width: 100%;
+
+    margin: 0;
+}
+
+
+/* =========================
+   FEEDBACK
+========================= */
+
+.drag-feedback {
+    display: block;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: 12px;
+
+    padding: 12px 14px;
+
+    background-color: #ffffff;
+
+    border-left: 4px solid #4B277F;
+
+    border-radius: 4px;
+
+    font-size: 0.95em;
+
+    line-height: 1.5;
+
+    color: #000;
+}
+
+
+/* =========================
+   TÍTULO DO FEEDBACK
+========================= */
+
+.drag-feedback strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #6A1AB2;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   TEXTO DO FEEDBACK
+========================= */
+
+.drag-feedback p {
+    margin: 0;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+
+/* =========================
+   BOTÃO RECOMEÇAR
+========================= */
+
+.reset-button {
+    align-self: flex-end;
+
+    margin-top: 10px;
+
+    padding: 10px 22px;
+
+    background-color: #DBD4E5;
+
+    border: 1px solid #DC6413;
+
+    border-radius: 8px;
+
+    color: #000 !important;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    transition: background-color 0.2s ease;
+}
+
+
+.reset-button:hover {
+    background-color: #e0e0e0;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .drag-and-drop-wrapper {
+        padding: 0 10px;
+    }
+
+
+    /* =========================
+       LAYOUT
+    ========================= */
+
+    .drag-layout {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 20px;
+    }
+
+
+    /* =========================
+       COLUNAS
+    ========================= */
+
+    .drag-column-a,
+    .drag-column-b {
+        width: 100%;
+
+        flex: none;
+    }
+
+
+    /* =========================
+       COLUNA A
+    ========================= */
+
+    .drag-column-a {
+        position: static;
+
+        top: auto;
+
+        align-self: stretch;
+
+        height: auto;
+
+        overflow: visible;
+
+        z-index: auto;
+    }
+
+
+    /* =========================
+       TÍTULO
+    ========================= */
+
+    .drag-column-title {
+        font-size: 1rem;
+
+        padding: 9px 12px;
+
+        position: static;
+    }
+
+
+    /* =========================
+       OPÇÕES
+    ========================= */
+
+    /*
+       No tablet e celular
+       o sticky é desativado.
+    */
+
+    .drag-options {
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+        gap: 10px;
+
+        padding: 10px 0 20px 0;
+
+        border-right: none;
+
+        border-bottom: 2px solid #DC6413;
+
+        position: static;
+
+        top: auto;
+
+        height: auto;
+
+        align-self: stretch;
+
+        overflow: visible;
+
+        background: transparent;
+
+        z-index: auto;
+    }
+
+
+    .drag-options.has-options {
+        border-right: none;
+
+        border-bottom: 2px solid #DC6413;
+    }
+
+
+    .drag-options:not(.has-options) {
+        border-right: none;
+
+        border-bottom: none;
+    }
+
+
+    /* =========================
+       ITEM
+    ========================= */
+
+    .drag-item {
+        width: 100%;
+    }
+
+
+    /* =========================
+       FRASES
+    ========================= */
+
+    .sentences-container {
+        width: 100%;
+    }
+
+
+    .drag-sentence-box {
+        width: 100%;
+
+        padding: 18px 15px;
+    }
+
+
+    /* =========================
+       DROP-ZONE
+    ========================= */
+
+    .drop-zone {
+        width: 100%;
+    }
+
+
+    /* =========================
+       BOTÃO
+    ========================= */
+
+    .reset-button {
+        align-self: center;
+    }
+}
+
+
+/* =========================================================
+   CELULAR
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .drag-and-drop-wrapper {
+        margin: 15px auto;
+
+        padding: 0 8px;
+    }
+
+
+    /* =========================
+       MENSAGEM FINAL
+    ========================= */
+
+    .completed-message {
+        font-size: 1em;
+
+        padding: 10px 12px;
+    }
+
+
+    /* =========================
+       LAYOUT
+    ========================= */
+
+    .drag-layout {
+        gap: 15px;
+    }
+
+
+    /* =========================
+       TÍTULO
+    ========================= */
+
+    .drag-column-title {
+        font-size: 1rem;
+
+        padding: 8px 10px;
+
+        margin-bottom: 10px;
+    }
+
+
+    /* =========================
+       OPÇÕES
+    ========================= */
+
+    .drag-options {
+        gap: 10px;
+
+        padding-top: 5px;
+
+        padding-bottom: 15px;
+
+        position: static;
+
+        top: auto;
+    }
+
+
+    /* =========================
+       ITEM
+    ========================= */
+
+    .drag-item {
+        width: 100%;
+
+        padding: 10px;
+
+        font-size: 0.95em;
+    }
+
+
+    /* =========================
+       CAIXA DA PERGUNTA
+    ========================= */
+
+    .drag-sentence-box {
+        padding: 15px 12px;
+
+        margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       TEXTO
+    ========================= */
+
+    .drag-sentence {
+        font-size: 1em;
+
+        line-height: 1.5;
+    }
+
+
+    /* =========================
+       ÁREA DE RESPOSTA
+    ========================= */
+
+    .drop-zone {
+        min-height: 46px;
+
+        padding: 5px;
+    }
+
+
+    /* =========================
+       FEEDBACK
+    ========================= */
+
+    .drag-feedback {
+        padding: 10px 12px;
+
+        font-size: 0.9em;
+    }
+
+
+    /* =========================
+       BOTÃO
+    ========================= */
+
+    .reset-button {
+        width: 100%;
+
+        padding: 10px 15px;
+    }
+}

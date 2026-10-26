@@ -1,0 +1,31 @@
+#unasus-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+#unasus-dropdown span { 
+    display: inline-block;
+    padding-bottom: 2px; 
+}
+
+#unasus-dropdown-content {
+    position: absolute;
+    left: 0;
+    background: #ffffff;
+    width: 170px;
+    border: 1px solid rgb(179, 179, 179);
+    padding: 10px;
+    cursor: alias;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+#unasus-dropdown-content ul { width: 100%; }
+
+#unasus-dropdown-content li { width: 100%; }
+
+.unasus_dropdown_content_visibility { 
+    opacity: 1 !important; 
+    visibility: visible !important;
+}

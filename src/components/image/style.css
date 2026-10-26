@@ -1,0 +1,304 @@
+.unasus-image {
+    position: relative;
+    background: #ffffff;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    align-items: center;
+}
+
+.unasus-image-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.unasus-image-aux {
+    position: absolute;
+    visibility: hidden;
+}
+
+.unasus-image span {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+}
+
+.correcao-tamanho {
+    width: 10px;
+    height: 10px;
+}
+
+.formulas img{
+    width: 55%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    
+}
+
+.fotos-acordion img {
+    max-width: 30%;
+    height: auto;
+    margin: auto;
+    display: flex;
+}
+
+.mapa img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    display: flex;
+}
+
+.fonte-img{
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+ 
+.imagens-grandes{
+    max-width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.imagens-carrousel{
+    max-width: 80%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+.tamanho-imagem{
+    max-width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+}
+
+/* imagem no centro da tela e pouco maior*/
+.imagenscentro {
+    align-items: center;      
+
+}
+.imagenscentro img {
+    width: 40%;
+    height: auto;
+    padding: 20px;
+}
+
+.personas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: auto;
+  padding: 20px;
+}
+
+/* Imagem responsiva */
+.personas img {
+  width: 50%;         /* ocupa metade da largura do container */
+  max-width: 120px;   /* nunca passa de 120px */
+  height: auto;       /* mantém proporção */
+  border-radius: 10px; /* opcional */
+}
+
+
+@media (max-width: 960px) {
+    .fotos-capitulos img {
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 600px) {
+  .personas img {
+    width: 70%;
+    max-width: 90px;
+  }
+}
+
+/* =========================
+   IMAGEM DA TELA INICIAL
+========================= */
+
+.imagem-inicial-container {
+    width: 90%;
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    box-sizing: border-box;
+}
+
+
+.imagem-inicial-wrapper {
+    width: 100%;
+    height: 16em;
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+}
+
+
+.imagem-inicial {
+    width: auto;
+    height: 100%;
+
+    max-width: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+/* =========================
+   3 IMAGENS DO MESMO TAMANHO
+========================= */
+.cards-imagens.col-12 {
+    display: flex;
+    width: 65%;
+    max-width: 1000px;
+
+    margin-left: auto !important;
+    margin-right: auto !important;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    gap: 12px;
+
+    justify-content: center;
+    align-items: stretch;
+
+    float: none;
+}
+
+
+/* Cada card */
+.cards-imagens > .col-4 {
+    flex: 1 1 0;
+    width: auto;
+    max-width: none;
+
+    display: flex;
+
+    padding: 0;
+}
+
+
+/* Caixa do componente */
+.cards-imagens .unasus-image {
+    width: 100%;
+    height: 100%;
+
+    padding: 5px;
+
+    box-sizing: border-box;
+}
+
+
+/* Área da imagem */
+.cards-imagens .unasus-image-wrapper {
+    width: 100%;
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+/* Imagem */
+.cards-imagens .unasus-image-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+
+    .imagem-inicial-wrapper {
+        height: auto;
+
+        padding: 10px;
+    }
+
+    .imagem-inicial {
+        width: 100%;
+        height: auto;
+
+        max-width: 600px;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .cards-imagens {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cards-imagens > .col-4 {
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .cards-imagens .unasus-image-wrapper {
+        height: auto;
+    }
+
+    .cards-imagens .unasus-image-wrapper img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 480px) {
+
+    .cards-imagens {
+        gap: 15px;
+    }
+
+    .cards-imagens > .col-4 {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .cards-imagens .unasus-image-wrapper {
+        height: 220px;
+    }
+}

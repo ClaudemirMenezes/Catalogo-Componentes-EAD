@@ -1,0 +1,47 @@
+/* =========================
+   GRUPO DE CARDS INFORMATIVOS
+========================= */
+
+.grupo-card-info {
+    width: 250px;
+    max-width: 250px;
+
+    margin-left: 0;
+    margin-right: 0;
+
+    transform: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 16px;
+
+    box-sizing: border-box;
+}
+
+
+
+/* Faz todos os cards ocuparem
+   a largura disponível */
+
+.grupo-card-info > * {
+    width: 100%;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+
+    .grupo-card-info {
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0;
+
+        transform: none;
+    }
+
+}

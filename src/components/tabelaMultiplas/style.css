@@ -1,0 +1,275 @@
+:root {
+  --multiplas-header-bg: #4B277F;
+  --multiplas-header-text: #ffffff;
+  --multiplas-border: #b9c0c8;
+  --multiplas-row-odd: #ffffff;
+  --multiplas-row-even: #DBD4E5;
+  --multiplas-font: 'Livvic', sans-serif;
+}
+
+/* ==========================
+   CONTAINER GERAL
+========================== */
+
+.tabela-multiplas-container {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--multiplas-font);
+}
+
+/* ==========================
+   TABELA DESKTOP
+========================== */
+
+.table-box-multiplas {
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+
+.table-multiplas {
+  width: max-content;
+  min-width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  border: 1px solid var(--multiplas-border);
+}
+
+/* Cabeçalho */
+
+.table-multiplas th {
+  min-width: 85px;
+  padding: 12px 10px;
+  border: 1px solid var(--multiplas-border);
+  background: var(--multiplas-header-bg);
+  color: var(--multiplas-header-text);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Células */
+
+.table-multiplas td {
+  min-width: 85px;
+  padding: 10px;
+  border: 1px solid var(--multiplas-border);
+  color: #000;
+  font-size: 13px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.table-multiplas1 td {
+  min-width: 85px;
+  padding: 10px;
+  border: 1px solid var(--multiplas-border);
+  color: #000;
+  font-size: 13px;
+  text-align: left;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Primeira coluna */
+
+.table-multiplas th:first-child,
+.table-multiplas td:first-child {
+  min-width: 110px;
+  font-weight: 600;
+}
+
+/* Linhas alternadas */
+
+.table-multiplas tbody tr:nth-child(odd) {
+  background: var(--multiplas-row-odd);
+}
+
+.table-multiplas tbody tr:nth-child(even) {
+  background: var(--multiplas-row-even);
+}
+
+.table-multiplas tbody tr:hover {
+  background: #ece8f3;
+}
+
+@media (max-width: 1024px) {
+
+  .table-box-multiplas {
+    width: 100%;
+    overflow-x: hidden; /* evita a barra horizontal */
+    padding: .5rem;
+  }
+
+  .table-multiplas {
+    width: 100%;
+    min-width: 100%;
+    table-layout: fixed;
+  }
+
+  .table-multiplas th,
+  .table-multiplas td {
+    min-width: auto;
+    width: auto;
+    padding: 8px 5px;
+    font-size: 12px;
+
+    /* Permite quebrar o texto */
+    white-space: normal;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+  }
+
+  /* Primeira coluna um pouco maior */
+  .table-multiplas th:first-child,
+  .table-multiplas td:first-child {
+    min-width: 70px;
+    width: 70px;
+  }
+
+}
+
+/* ==========================
+   CARDS
+========================== */
+
+.cards-multiplas {
+  display: none;
+}
+
+/* ==========================
+   TELAS MENORES
+========================== */
+
+@media (max-width: 768px) {
+
+  /*
+    Esconde completamente a tabela.
+    Dessa forma, a rolagem horizontal desaparece.
+  */
+  .table-box-multiplas {
+    display: none;
+    overflow: hidden;
+  }
+
+  /*
+    Mostra os cards.
+  */
+  .cards-multiplas {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  /*
+    Um card para cada bairro.
+  */
+  .card-multiplas {
+    width: 100%;
+    margin-bottom: 18px;
+    border: 1px solid var(--multiplas-border);
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  }
+
+  /*
+    Título do card:
+    Bairros: 19
+  */
+  .card-multiplas h3 {
+    margin: 0;
+    padding: 13px;
+    background: var(--multiplas-header-bg);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /*
+    Organização dos anos em duas colunas.
+  */
+  .card-multiplas-conteudo {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  /*
+    Cada item contém:
+    ano | valor
+  */
+  .card-item-multiplas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 0;
+    padding: 11px 12px;
+    border-right: 1px solid var(--multiplas-border);
+    border-bottom: 1px solid var(--multiplas-border);
+    box-sizing: border-box;
+  }
+
+  /*
+    Retira a borda direita dos itens
+    que ficam na segunda coluna.
+  */
+  .card-item-multiplas:nth-child(even) {
+    border-right: none;
+  }
+
+  .card-item-multiplas strong {
+    margin-right: 10px;
+    color: var(--multiplas-header-bg);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .card-item-multiplas span {
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: right;
+  }
+}
+
+/* ==========================
+   CELULARES MENORES
+========================== */
+
+@media (max-width: 480px) {
+
+  .cards-multiplas {
+    padding: 0;
+  }
+
+  /*
+    Em celulares menores, cada ano fica
+    em uma linha, sem qualquer rolagem.
+  */
+  .card-multiplas-conteudo {
+    grid-template-columns: 1fr;
+  }
+
+  .card-item-multiplas {
+    border-right: none;
+  }
+
+  .card-multiplas h3 {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .card-item-multiplas strong,
+  .card-item-multiplas span {
+    font-size: 13px;
+  }
+}
